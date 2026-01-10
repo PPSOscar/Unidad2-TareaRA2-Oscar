@@ -7,8 +7,9 @@ Tarea obligatoria correspondiente a la Unidad 2
 
 Este repositorio corresponde a la **Tarea RA2 de la Unidad 2**, en la que se desarrolla una a>
 
-El trabajo abarca todo el ciclo básico de desarrollo del software:
-Implementación del código, documentación detallada, ejecución y depuración en un IDE, pruebas>
+* Se abarca el manejo de las principales listas en fuentes abiertas sobre vulnerabilidades, debilidades, etc. Con su corresponde relación entre sí y la extración de información de las mismas.
+
+* Se aplica el estándar ASVS y se identifican las comprobaciones a realizar en una aplicación según el nivel de seguridad de la misma.
 
 Toda la documentación generada ha sido publicada mediante **GitHub Pages**.
 
@@ -18,14 +19,13 @@ Toda la documentación generada ha sido publicada mediante **GitHub Pages**.
 
 La documentación completa del proyecto puede consultarse en el siguiente enlace:
 
-- **https://ppsoscar.github.io/Unidad1-TareaRA1-Oscar/**
+- **https://ppsoscar.github.io/Unidad2-TareaRA2-Oscar/**
 
 En la web se detalla:
-- La estructura y funcionamiento de la aplicación
-- El proceso de ejecución y depuración
-- La implementación de los tests
-- La ejecución en sandbox
-- La reflexión sobre seguridad
+- El trazado de la vulnerabilidad
+- El análisis de la vulnerabilidad en máquina vulnerable
+- La comprobación de requisitos de seguridad de una aplicación
+- La reflexión sobre los riesgos de las aplicaciones
 
 ---
 
