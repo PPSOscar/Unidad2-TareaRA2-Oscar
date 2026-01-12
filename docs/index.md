@@ -4,7 +4,7 @@
 
 ---
 
-1. [Tazado de vulnerabilidad](trazado.md)
+1. [Trazado de vulnerabilidad](TrazadoVulnerabilidadGoAnywhere.md)
 2. [Análisis de vulnerabilidad](analisis.md)
 3. [Comprobación Requisitos de Seguridad](comprobacion.md)
 4. [Reflexión](reflexion.md)
