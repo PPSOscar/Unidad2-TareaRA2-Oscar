@@ -5,6 +5,6 @@ theme:
 nav:
   - 1. Índice: index.md
   - 2. Trazado de vulnerabilidad: TrazadoVulnerabilidadGoAnywhere.md
-  - 3. Análisis de vulnerabilidad en máquina vulnerable: analisis.md
-  - 4. Comprobación de requisitos de Seguridad de una aplicación: comprobacion.md
+  - 3. Análisis de vulnerabilidad en máquina vulnerable: analisisVulnerabilidad.md
+  - 4. Comprobación de requisitos de Seguridad de una aplicación: ComprobacionRequisitosAplicacion.md
   - 5. Reflexión: reflexion.md
