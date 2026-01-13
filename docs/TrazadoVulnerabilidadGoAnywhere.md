@@ -60,9 +60,9 @@ Con todos estos factores, se ha determinado que la vulnerabilidad sea crítica, 
 
 En la lista de debilidades encontramos una debilidad que afecta a la vulnerabilidad encontrada:
 
-* [!CWE-425](https://cwe.mitre.org/data/definitions/425.html): Solicitud directa (navegación forzada).
+* ![CWE-425](https://cwe.mitre.org/data/definitions/425.html): Solicitud directa (navegación forzada).
 
-[!NVD](img/Trazado/nvd.png)
+![NVD](img/Trazado/nvd.png)
 
 ## MITTRE
 
@@ -70,19 +70,19 @@ En el MITTRE encontramos información muy similar a la de la NVD, pero con menos
 
 La debilidad coincide con la de la NVD.
 
-[!MITTRE](img/Trazado/mittre.png)
+![MITTRE](img/Trazado/mittre.png)
 
 ---
 
-Sigo realizando la trazabilidad desde el enlace de la debilidad [!CWE](https://cwe.mitre.org/data/definitions/425.html).
+Sigo realizando la trazabilidad desde el enlace de la debilidad ![CWE](https://cwe.mitre.org/data/definitions/425.html).
 
 Destacar que realizo la consulta en la vista "Completa".
 
-El [!CWE](https://cwe.mitre.org/) forma parte del MITTRE y se encarga de recopilar información de las debilidades.
+El ![CWE](https://cwe.mitre.org/) forma parte del MITTRE y se encarga de recopilar información de las debilidades.
 
 Se indica en la descripción de la debilidad qe la aplicación web mo hace cumplir adecuadamente la autorización en todas las URL, _scripts_ o archivos restringidos. LAs aplicaciones web susceptibles a estos ataques hacen una falsa suposición de que tales recursos solo se pueden alcanzar a través de una ruta de navegación determinada y solo aplican autorización en ciertos puntos.
 
-[!CWE](img/Trazado/cwe_1.png)
+![CWE](img/Trazado/cwe_1.png)
 
 Se muestran las mitigaciones a esta debilidad:
 
@@ -91,26 +91,26 @@ Se muestran las mitigaciones a esta debilidad:
 
 Se muestran las relaciones. Tenemos los diferentes ID correspondientes a las debilidades asociadas, junto a su naturaleza, descripción y tipo (si ponemos el cursor sobre el tipo, se nos dará información más detallada).
 
-[!CWE](img/Trazado/cwe_2.png)
+![CWE](img/Trazado/cwe_2.png)
 
 Se muestra un único ejemplo de cómo sería posible la navegación forzada y una lista de ejemplos para entender las variedades de formas en las que se puede introducir la debilidad, con sus correspondientes CVE.
 
-[!CWE](img/Trazado/cwe_3.png)
+![CWE](img/Trazado/cwe_3.png)
 
 Se muestan los diferentes CAPEC, que son los patrones de ataque para atacar la debilidad.
 
-[!CWE](img/Trazado/cwe_4.png)
+![CWE](img/Trazado/cwe_4.png)
 
 
 ---
 
 Los diferentes patrones de ataque que encontramos en esta debilidad son los siguientes:
 
-* [!CAPEC-127](https://capec.mitre.org/data/definitions/127.html): Indexación de directorios
-* [!CAPEC-143](https://capec.mitre.org/data/definitions/143.html): Detectar páginas web no publicitadas
-* [!CAPEC-144](https://capec.mitre.org/data/definitions/144.html): Detectar servicios de web no publicitados
-* [!CAPEC-668](https://capec.mitre.org/data/definitions/668.html): Negociación clave de ataque Bluetooth (KNOB)
-* [!CAPEC-87](https://capec.mitre.org/data/definitions/87.html): Exámenes contundentes
+* ![CAPEC-127](https://capec.mitre.org/data/definitions/127.html): Indexación de directorios
+* ![CAPEC-143](https://capec.mitre.org/data/definitions/143.html): Detectar páginas web no publicitadas
+* ![CAPEC-144](https://capec.mitre.org/data/definitions/144.html): Detectar servicios de web no publicitados
+* ![CAPEC-668](https://capec.mitre.org/data/definitions/668.html): Negociación clave de ataque Bluetooth (KNOB)
+* ![CAPEC-87](https://capec.mitre.org/data/definitions/87.html): Exámenes contundentes
 
 En el siguiente vídeo muestro el CAPEC-127. Todos los CAPEC tienen prácticamente los mismos apartados en los que:
 
@@ -128,7 +128,7 @@ En el siguiente vídeo muestro el CAPEC-127. Todos los CAPEC tienen prácticamen
 12. Se muestran debilidades relacionadas con su correspondiente CWE.
 13. Se muesta un mapeo de la taxonomía y referencias.
 
-[!CAPEC](https://drive.google.com/file/d/1JAqX_Jc0p_QX3EAS88sXgf_CmrRAEEPA/view?usp=sharing)
+![CAPEC](https://drive.google.com/file/d/1JAqX_Jc0p_QX3EAS88sXgf_CmrRAEEPA/view?usp=sharing)
 
 ---
 
@@ -142,9 +142,9 @@ Es una estructura establecida que nos indica los elementos afectados. (CPE:versi
 
 El CPE sirve para herramientas automatizadas. Los diferentes programas de detección y explotación de vulnerabilidades se intercambian información a través de registros, y gracias a estos CPE podemos ver qué elementos son susceptibles de ataques.
 
-[!Listas NVD](img/Trazado/nvd_listas.png)
+![Listas NVD](img/Trazado/nvd_listas.png)
 
-[!CPE](img/Trazado/cpe.png)
+![CPE](img/Trazado/cpe.png)
 
 ---
 
@@ -154,13 +154,13 @@ Toda la información obtenida para intercambiar o añadir a diferentes programas
 
 Para descargar el JSON de la vulnerabilidad de la actividad, en la parte superior derecha del [!CVE](https://www.cve.org/CVERecord?id=CVE-2024-0204) clicamos sobre "View JSON":
 
-[!JSON](img/Trazado/viewjson.png)
+![JSON](img/Trazado/viewjson.png)
 
-Vista del JSON:
+A continuación dejo una captura de pantalla con la vista del JSON. Podemos observar diferente información acerca de la debilidad (versión, ID, CVE, CWS...):
 
-[!JSON](img/Trazado/json.png)
+![JSON](img/Trazado/json.png)
 
 Descargar JSON:
 
-* [!Archivo JSON](JSON/CVE-2024-0204.json)
+* ![Archivo JSON](JSON/CVE-2024-0204.json)
 
