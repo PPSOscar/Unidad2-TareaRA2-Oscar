@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>2. Trazado de vulnerabilidad - PPS - Unidad2 - TareaRA2 - Óscar Polo Fernández</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">PPS - Unidad2 - TareaRA2 - Óscar Polo Fernández</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">1. Índice</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./" class="nav-link active" aria-current="page">2. Trazado de vulnerabilidad</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../analisisVulnerabilidad/" class="nav-link">3. Análisis de vulnerabilidad en máquina vulnerable</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../ComprobacionRequisitosAplicacion/" class="nav-link">4. Comprobación de requisitos de Seguridad de una aplicación</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../reflexion/" class="nav-link">5. Reflexión</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href=".." class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../analisisVulnerabilidad/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#apartado-1-trazado-de-una-vulnerabilidad" class="nav-link">Apartado 1 - Trazado de una vulnerabilidad</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#1-trazado" class="nav-link">1. Trazado</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2-informacion-sobre-las-vulnerabilidades" class="nav-link">2. Información sobre las vulnerabilidades</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3-informacion-sobre-el-riesgo-o-criticidad-de-una-vulnerabilidad" class="nav-link">3. Información sobre el riesgo o criticidad de una vulnerabilidad</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4-informacion-sobre-patrones-de-ataque" class="nav-link">4. Información sobre patrones de ataque</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5-consulta-cpe" class="nav-link">5. Consulta CPE</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#6-registro-cve" class="nav-link">6. Registro CVE</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="apartado-1-trazado-de-una-vulnerabilidad">Apartado 1 - Trazado de una vulnerabilidad</h1>
+<p>En este apartado muestro el desarrollo que he realizado de la <a href="https://github.com/jmmedinac03vjp/PuestaProduccionSegura/blob/main/Unidad2-NivelesSeguridad/Actividad-TrazadoVulnerabilidad/README.md">Actividad- TrazadoVulnerabilidad</a>.</p>
+<p>El trazado de la vulnerabilidad de la que se informa en la actividad se corresponde a la de <a href="https://www.incibe.es/empresas/avisos/vulnerabilidad-critica-de-omision-de-autenticacion-en-goanywhere-mft-de-fortra">este artículo</a> del <a href="https://www.incibe.es/">INCIBE</a>.</p>
+<hr />
+<h2 id="1-trazado">1. Trazado</h2>
+<p>Se informa de una vulnerabilidad crítica relacionada con la omisión de autenticación en <a href="https://www.fortra.com/es/products/secure-managed-file-transfer-software">GoAnywhere MFT de Fortra</a>. La fecha de publicación se corresponde al 24 de enero de 2024 y la importancia tiene un nivel 5, es decir, <strong>crítica</strong>.</p>
+<p>La vulnerabilidad afecta desde la versión 6.0.1 hasta la 7.4.1.</p>
+<p><img alt="Artículo INCIBE" src="../img/Trazado/articulo_1.png" /></p>
+<p>También encuentro una descripción en la que se me indica que la vulnerabilidad permite a los ciberdelincuentes crear un usuario administrador a partir del portal de administración, eludiendo así los requisitos de autenticación en el acceso a un servicio.</p>
+<p>Básicamente un ciberdelincuente puede crear un usuario con máximos privilegios a través de este portal de administración, con lo que ello supone.</p>
+<p>Se indica la solución, que sería actualizar a la versión 7.4.1 o superior o eliminar el archivo <em>InitialAccountSetup.xhtml</em> en el directorio de instalación en caso de despliegues sin contenedor. Con despliegues en contenedor, habría que reemplazar dicho archivo por uno limpio y reiniciar.</p>
+<p>Se aportan enlaces para obtener más información desde el portal de clientes de GoAnywhere.</p>
+<p><img alt="Artículo INCIBE" src="../img/Trazado/articulo_2.png" /></p>
+<hr />
+<h2 id="2-informacion-sobre-las-vulnerabilidades">2. Información sobre las vulnerabilidades</h2>
+<p>En este punto, sé a qué elementos afecta la vulnerabilidad, pero no tengo enlace para dirigirme a las diferentes listas, por lo que me iré al enlace del apartado de "referencias" del artículo: <a href="https://www.fortra.com/security/advisories/product-security/fi-2024-001">enlace referencia</a>.</p>
+<p>En la referencia, se vuelve a describir que la vulnerabilidad se debe a un <em>Bypass</em> que pueden realizar los ciberdelicuentes desde el portal de administración. También se indica la severidad, el impacto que tiene y las soluciones. Básicamente, lo mismo que se muesta en el artículo del INCIBE.</p>
+<p>Lo que encuentro aquí es la identificación de una única vulnerabilidad, ya se indica un único <a href="https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades">CVE</a>. </p>
+<ul>
+<li>CVE es una lista mantenida por el <a href="https://attack.mitre.org/">MITRE</a> en donde, cuando alguien encuentra una vulnerabilidad envía un reporte y ellos la estudian para determinar si ya está reportada o no, y en tal caso, asignarle un número identificativo. Este número consistiría en CVE, seguido del número de año y un número correlativo.</li>
+</ul>
+<p><img alt="Referencia CVE" src="../img/Trazado/referencia_cve.png" /></p>
+<p>En este punto, tengo la vulnerabilidad <strong>CVE-2024-0204</strong>.</p>
+<hr />
+<h2 id="3-informacion-sobre-el-riesgo-o-criticidad-de-una-vulnerabilidad">3. Información sobre el riesgo o criticidad de una vulnerabilidad</h2>
+<p>Ahora lo que haré será buscar la vulnerabilidad en el <a href="https://www.cve.org/CVERecord?id=CVE-2024-0204">MITTRE</a> y en la base de datos del gobierno de Estados Unidos, la <a href="https://nvd.nist.gov/vuln/detail/cve-2024-0204">NVD</a>.</p>
+<p>Indico que, en ambos sitios, la información obtenida es muy similar.</p>
+<ul>
+<li><strong>NVD</strong></li>
+</ul>
+<p>Encuentro la descripción de la vulnerabilidad y la métrica. La métrica es la forma de calcular el nivel de criticidad de la vulnerabilidad (CVSS).</p>
+<p>Si me fijo en el CVSS, puedo observar que depende de varios factores:</p>
+<ul>
+<li>Vector de ataque: Se trata de la facilidad del vector de ataque, que varía. Por ejemplo, no sería lo mismo necesitar acceso físico al ordenador para realizar el ataque que realizarlo desde cualquier sitio, a través de la red. En este caso se realiza desde la red.</li>
+<li>Complejidad del ataque: Se trata de ver si es sencillo realizarlo o no. En este caso es la complejidad es baja.</li>
+<li>Privilegios: Son la cantidad de privilegios que se requieren para hacer el ataque. Por ejemplo, no sería lo mismo necesitar ser un usuario logeado para hacerlo que hacerlo desde "fuera". En este caso no se necesitan privilegios.</li>
+<li>Inteacción con el usuario: Está más limitado el poder hacerlo con un usuario que realizarlo con una herramienta automática. En este caso no se requiere interación con el usuario.</li>
+<li>Confidencialidad, integridad y disponibilidad: Afecta a los tres pilares fundamentales de la ciberseguridad de manera muy alta.</li>
+<li>Conocimiento: Si es conocida la vulnerabilidad, tiene más impacto que si no lo es. En este caso tiene un 5.9 de impacto.</li>
+</ul>
+<p>Con todos estos factores, se ha determinado que la vulnerabilidad sea crítica, con un 9.8.</p>
+<p>En la lista de debilidades encuentro una debilidad que afecta a la vulnerabilidad encontrada:</p>
+<ul>
+<li><a href="https://cwe.mitre.org/data/definitions/425.html">CWE-425</a>: Solicitud directa (navegación forzada).</li>
+</ul>
+<p><img alt="NVD" src="../img/Trazado/nvd.png" /></p>
+<ul>
+<li>** MITTRE**</li>
+</ul>
+<p>En el MITTRE encuentro información muy similar a la de la NVD, pero con menos detalles. Por ejemplo, en la métrica, no se detallan los factores para calcular la criticidad de la vulnerabilidad.</p>
+<p>La debilidad coincide con la de la NVD.</p>
+<p><img alt="MITTRE" src="../img/Trazado/mittre.png" /></p>
+<hr />
+<h2 id="4-informacion-sobre-patrones-de-ataque">4. Información sobre patrones de ataque</h2>
+<p>Sigo realizando la trazabilidad desde el enlace de la debilidad <a href="https://cwe.mitre.org/data/definitions/425.html">CWE</a>.</p>
+<p>Destacar que realizo la consulta en la vista "Completa".</p>
+<p>El <a href="https://cwe.mitre.org/">CWE</a> forma parte del MITTRE y se encarga de recopilar información de las debilidades.</p>
+<p>Se indica en la descripción de la debilidad qe la aplicación web mo hace cumplir adecuadamente la autorización en todas las URL, <em>scripts</em> o archivos restringidos. LAs aplicaciones web susceptibles a estos ataques hacen una falsa suposición de que tales recursos solo se pueden alcanzar a través de una ruta de navegación determinada y solo aplican autorización en ciertos puntos.</p>
+<p><img alt="CWE" src="../img/Trazado/cwe_1.png" /></p>
+<p>Se muestran las mitigaciones a esta debilidad:</p>
+<ol>
+<li>Aplicar autorizaciones de control de acceso para cada acceso a todas las URL, <em>scripts</em> o archivos restringidos.</li>
+<li>Hacer uso de marcos basados en MVC como <a href="https://www.incibe.es/">Struts</a>.</li>
+</ol>
+<p>Se muestran las relaciones. Están indicados los diferentes ID correspondientes a las debilidades asociadas, junto a su naturaleza, descripción y tipo (si pongo el cursor sobre el tipo, se muestra información más detallada).</p>
+<p><img alt="CWE" src="../img/Trazado/cwe_2.png" /></p>
+<p>Se muestra un único ejemplo de cómo sería posible la navegación forzada y una lista de ejemplos para entender las variedades de formas en las que se puede introducir la debilidad, con sus correspondientes CVE.</p>
+<p><img alt="CWE" src="../img/Trazado/cwe_3.png" /></p>
+<p>Se muestran los diferentes CAPEC, que son los patrones de ataque para atacar la debilidad.</p>
+<p><img alt="CWE" src="../img/Trazado/cwe_4.png" /></p>
+<p>Los diferentes patrones de ataque que encuentro en esta debilidad son los siguientes:</p>
+<ul>
+<li><a href="https://capec.mitre.org/data/definitions/127.html">CAPEC-127</a>: Indexación de directorios</li>
+<li><a href="https://capec.mitre.org/data/definitions/143.html">CAPEC-143</a>: Detectar páginas web no publicitadas</li>
+<li><a href="https://capec.mitre.org/data/definitions/144.html">CAPEC-144</a>: Detectar servicios de web no publicitados</li>
+<li><a href="https://capec.mitre.org/data/definitions/668.html">CAPEC-668</a>: Negociación clave de ataque Bluetooth (KNOB)</li>
+<li><a href="https://capec.mitre.org/data/definitions/87.html">CAPEC-87</a>: Exámenes contundentes</li>
+</ul>
+<p>En el siguiente vídeo muestro el CAPEC-127. Todos los CAPEC tienen prácticamente los mismos apartados en los que:</p>
+<p><a href="https://drive.google.com/file/d/1JAqX_Jc0p_QX3EAS88sXgf_CmrRAEEPA/view?usp=sharing">CAPEC</a></p>
+<ol>
+<li>Se muestra una descripción del patrón de ataque.</li>
+<li>Se muestra una probabilidad de ataque.</li>
+<li>Se le da un valor a la gravedad del ataque.</li>
+<li>Se muestran relaciones con otros patrones de ataque.</li>
+<li>Se explica el flujo de ejecución (exploración, experimentación y exploit).</li>
+<li>Se dan los requisitos previos.</li>
+<li>Se especifican las habilidades requeridas para ejecutarlo.</li>
+<li>Se muestran los recursos requeridos.</li>
+<li>Se muestan las consecuencias.</li>
+<li>Se indican las mitigaciones.</li>
+<li>Se dan ejemplos de escenarios.</li>
+<li>Se muestran debilidades relacionadas con su correspondiente CWE.</li>
+<li>Se muesta un mapeo de la taxonomía y referencias.</li>
+</ol>
+<hr />
+<h2 id="5-consulta-cpe">5. Consulta CPE</h2>
+<p>Llegado a este punto, he relacionado tres listas, la de vulnerabilidades (CVE - MITTRE / NVD), la de vulnerabilidades (CWE) y la de patrones de ataque (CAPEC).</p>
+<p>Adicionalmente, puedo consultar las listas (CPE) del NVD. Son listas de las configuraciones de <em>software</em> conocidas.</p>
+<p>Es una estructura establecida que nos indica los elementos afectados. (CPE:version:fabricante:software:componentes)</p>
+<p>El CPE sirve para herramientas automatizadas. Los diferentes programas de detección y explotación de vulnerabilidades se intercambian información a través de registros, y gracias a estos CPE podemos ver qué elementos son susceptibles de ataques.</p>
+<p><img alt="Listas NVD" src="../img/Trazado/nvd_listas.png" /></p>
+<p><img alt="CPE" src="../img/Trazado/cpe.png" /></p>
+<hr />
+<h2 id="6-registro-cve">6. Registro CVE</h2>
+<p>Descarga del Registro CVE De la vulnerabilidad</p>
+<p>Toda la información obtenida para intercambiar o añadir a diferentes programas de explotación o detección de vulnerabilidades, o que directamente va a bases de datos la podemos descargar en formato de JSON. De esta forma tendremos acceso a toda la información y será interpretable entre los diferentes programas que utilizamos para detectar, atacar, etc.</p>
+<p>Para descargar el JSON de la vulnerabilidad de la actividad, en la parte superior derecha del <a href="https://www.cve.org/CVERecord?id=CVE-2024-0204">CVE</a> clicamos sobre "View JSON":</p>
+<p><img alt="JSON" src="../img/Trazado/viewjson.png" /></p>
+<p>A continuación dejo una captura de pantalla con la vista del JSON. Podemos observar diferente información acerca de la debilidad (versión, ID, CVE, CWS...):</p>
+<p><img alt="JSON" src="../img/Trazado/json.png" /></p>
+<p>Descargar JSON:</p>
+<ul>
+<li><a href="../JSON/CVE-2024-0204.json">Archivo JSON</a></li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

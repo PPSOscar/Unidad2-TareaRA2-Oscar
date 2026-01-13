@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>3. Análisis de vulnerabilidad en máquina vulnerable - PPS - Unidad2 - TareaRA2 - Óscar Polo Fernández</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">PPS - Unidad2 - TareaRA2 - Óscar Polo Fernández</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">1. Índice</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../TrazadoVulnerabilidadGoAnywhere/" class="nav-link">2. Trazado de vulnerabilidad</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./" class="nav-link active" aria-current="page">3. Análisis de vulnerabilidad en máquina vulnerable</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../ComprobacionRequisitosAplicacion/" class="nav-link">4. Comprobación de requisitos de Seguridad de una aplicación</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../reflexion/" class="nav-link">5. Reflexión</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../TrazadoVulnerabilidadGoAnywhere/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../ComprobacionRequisitosAplicacion/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#apartado-2-creacion-de-entorno-de-maquinas-vulnerables-para-pruebas" class="nav-link">Apartado 2 - Creación de entorno de máquinas vulnerables para pruebas.</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#1-entorno-de-maquinas-virtuales" class="nav-link">1. Entorno de máquinas virtuales</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2-despliegue-de-escenario" class="nav-link">2. Despliegue de escenario</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3-acceso-a-las-maquinas-y-creacion-de-bases-de-datos" class="nav-link">3. Acceso a las máquinas y creación de bases de datos</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4-analisis-de-vulnerabilidad" class="nav-link">4. Análisis de vulnerabilidad</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="apartado-2-creacion-de-entorno-de-maquinas-vulnerables-para-pruebas">Apartado 2 - Creación de entorno de máquinas vulnerables para pruebas.</h1>
+<p>En este apartado muestro cómo he realizado el desarrollo de la <a href="https://github.com/jmmedinac03vjp/PuestaProduccionSegura/blob/main/Unidad2-NivelesSeguridad/Actividad-MaquinasVulnerables/README.md">Actividad- TrazadoVulnerabilidad</a>.</p>
+<p>En el <a href="doc/TrazadoVulnerabilidadGoAnywhere.md">apartado 1</a> he realizado el trazado de una vulnerabilidad, buscando información de una vulnerabiliad concreta y sus debilidades en las diferentes fuentes web abiertas. En esta actividad me centro en desplegar un entorno con un conjunto de máquinas para probar los ataques y poder ver también cómo se securizan.</p>
+<hr />
+<h2 id="1-entorno-de-maquinas-virtuales">1. Entorno de máquinas virtuales</h2>
+<p>En primer lugar, voy a explicar las diferentes máquinas que hay en el archivo <a href="https://github.com/jmmedinac03vjp/PuestaProduccionSegura/blob/main/Unidad2-NivelesSeguridad/Actividad-MaquinasVulnerables/Files/docker-compose.yml">docker-compose.yml</a>.</p>
+<p>Este archivo le tengo en el directorio desde el que voy a trabajar esta actividad y desde el cual voy a desplegar el contenedor (<em>/home/PPSOscar/Escritorio/PPS/Unidad2/Actividad-MaquinasVulnerables1</em>).</p>
+<p>En este primer grupo tengo tres máquinas:</p>
+<ol>
+<li>DVWA<ol>
+<li>imagen de dvwa</li>
+<li>contenedor dvwa</li>
+<li>hostname mismo que el contenedor</li>
+<li>redirección de puertos al 8002 (por el que voy a acceder a la máquina)</li>
+<li>red labpps-net</li>
+</ol>
+</li>
+<li>BWAPP<ol>
+<li>imagen de bwapp</li>
+<li>contenedor bwapp</li>
+<li>hostname mismo que el contenedor</li>
+<li>redirección de puertos al 8001 (por el que voy a acceder a la máquina)</li>
+<li>red labpps-net</li>
+</ol>
+</li>
+<li>KALI<ol>
+<li>imagen de kali</li>
+<li>contenedor kali</li>
+<li>hostname mismo que el contenedor</li>
+<li>volumen bind mount (kali-volume)  que se montará en /root/kali</li>
+<li>red labpps-net</li>
+</ol>
+</li>
+</ol>
+<p><img alt="docker-compose.yml" src="../img/Analisis/docker_compose1.png" /></p>
+<p>En el segundo grupo encuentro varios contenedores:</p>
+<ol>
+<li>Base de datos</li>
+<li>Base de datos de administrador accesible a través del puerto 81</li>
+<li>Máquina www (servidor web)<ol>
+<li>Tenemos una serie de puertos abiertos</li>
+<li>Utiliza dos redes (datanet / labpps-net), para conectarse con nuestra máquina y con la base de datos</li>
+</ol>
+</li>
+<li>Directory. Es un <a href="https://www.fortinet.com/lat/resources/cyberglossary/ldap-authentication">LDAP</a>. Accesinle mediante el puerto 389.</li>
+<li>Directory admin accesible a través del puerto 82.</li>
+</ol>
+<p><img alt="docker-compose.yml" src="../img/Analisis/docker_compose2.png" /></p>
+<p>En el tercer grupo tenemos los segmetnos de las redes:</p>
+<ol>
+<li>Encontramos las dos redes utilizadas.</li>
+<li>Tenemos los volúmenes utilizados</li>
+</ol>
+<p><img alt="docker-compose.yml" src="../img/Analisis/docker_compose3.png" /></p>
+<hr />
+<h2 id="2-despliegue-de-escenario">2. Despliegue de escenario</h2>
+<p>A continuación lo que hago es desplegar el escenario del contenedor (<em>docker compose up -d</em>).</p>
+<p>Lo primero que hago  es descargar todas las imágenes.</p>
+<p><img alt="despliegue de contenedor" src="../img/Analisis/escenario.png" /></p>
+<hr />
+<h2 id="3-acceso-a-las-maquinas-y-creacion-de-bases-de-datos">3. Acceso a las máquinas y creación de bases de datos</h2>
+<p>Seguidamente, abriré las diferentes máquinas vulnerables.</p>
+<ul>
+<li>DWA: A través de localhost:8002 (usuario admin / contraseña password)</li>
+</ul>
+<p>Lo primero que me dice es que tengo que inicializar la base de datos.</p>
+<p><img alt="DVWA" src="../img/Analisis/dvwa1.png" /></p>
+<p>Una vez creada la base de datos, ya tengo disponibles las instrucciones y los diferentes ataques a poder realizar.</p>
+<p><img alt="DVWA" src="../img/Analisis/dvwa2.png" /></p>
+<ul>
+<li>bWAPP: A través de localhost:8001 (usuario bee / contraseña bug) </li>
+</ul>
+<p>La primera vez que accedo da error porque no tiene creada la base de datos. Se crea accediendo a <a href="http://localhost:8001/install.php">creación base de datos</a></p>
+<p>Desde esta máquina tengo acceso a varios ataques (ver listado) y puedo seleccionar la dificultad de los ataques.</p>
+<p><img alt="bWAPP" src="../img/Analisis/bwapp1.png" /></p>
+<ul>
+<li>OWASP Multillidae: A través de localhost:8080 o localhost:80 (sin usuario ni contraseña)</li>
+</ul>
+<p>La primera vez que accedo se pide crear la bases de datos.</p>
+<p><img alt="OWASP" src="../img/Analisis/owasp1.png" /></p>
+<p>Una vez creada la base de datos puedo acceder a las diferentes ataques y las diferentes vulnerabilidades añadidas en distintos años.</p>
+<p><img alt="OWASP" src="../img/Analisis/owasp2.png" /></p>
+<ul>
+<li>phpAdmin</li>
+</ul>
+<p>Puedo acceder a la base de datos (panel de administración de <a href="https://www.phpmyadmin.net/">phpMyAdmin</a>) para crear registos, modificar base de datos, etc. A través de localhost:81</p>
+<p><img alt="phpadmin" src="../img/Analisis/phpadmin1.png" /></p>
+<ul>
+<li>PhpLdapAdmin</li>
+</ul>
+<p>Puedo acceder también a PhpLdapAdmin, desde donde puedo modificar el servidor LDAP. A través de localhost:82</p>
+<p><img alt="phpldapadmin" src="../img/Analisis/phpldapadmin1.png" /></p>
+<hr />
+<h2 id="4-analisis-de-vulnerabilidad">4. Análisis de vulnerabilidad</h2>
+<p>Llegado a este punto, el escenadrio multi contenedor está ya creado. Paso ahora a analizar determinados ataques y ver la securización y elementos utilizados para securizar.</p>
+<p>Voy a realizar un ataque <em>SQL Injection (Get/Search)</em>. Esta vulnerabilidad ocurre cuando una aplicación web inserta directamente lo que escribe el usuario dentro de una consulta SQL, sin validarlo ni protegerlo.</p>
+<p>En el caso del buscador de películas de bWAPP, el usuario escribe algo en el buscador y ese texto se envía por la URL mediante el método GET. El servidor construye una consulta SQL usando directamente ese texto, y si no hay protección, el usuario puede modificar directamente la consulta SQL original.</p>
+<p>Hago un ejemplo conceptual para que se entienda mejor:</p>
+<ul>
+<li>Internamente la aplicación hace algo así:</li>
+</ul>
+<p><em>SELECT * FROM movies WHERE title LIKE '%avatar%';</em></p>
+<p>El problema surge cuando se escriben caracteres especiales como por ejemplo <em>'</em>. Hace que la consulta se rompa y demuestra que la aplicación no filtra ni escapa correctamente la entrada. Se devuelve texto de error de sintaxis.</p>
+<p><img alt="ataque SQL" src="../img/Analisis/ataquesql.png" /></p>
+<p>Ahora, inspeccionaré el código que trata el input para ver qué está haciendo la aplicación.</p>
+<p>Se puede ver en la URL que el código duente que he ejecutado es sqli 1.php. Accedo al contenedor de bWAPP (<em>docker exec -it bwapp /bin/bash</em>) y muestro el contenido del archivo (<em>nano /var/www/html/sqli1.php</em>).</p>
+<p>Aquí se muestra la función con lo que se ha de realizar en base al nivel de seguridad que hayamos establecido en bWAPP. Con el nivel de seguridad más bajo, el 0, lo que hace la función es llamar a la función no_check(). Con otros niveles de seguridad se llama a las funciones xsscheck1 y xsscheck3.</p>
+<p><img alt="funcion" src="../img/Analisis/funcion.png" /></p>
+<ul>
+<li>Indico enlace para descargar archivo completo y poder revisarlo: <a href="php/sqli_1.php" download> Descargar sqli_1.php </a></li>
+</ul>
+<p>En alguno de los siguientes módulos es donde se encuentran las funciones.</p>
+<p><img alt="funcion" src="../img/Analisis/funcion2.png" /></p>
+<p>Busco con <em>grep</em> para localizar los ficheros en los que aparece y la línea</p>
+<p>Las funciones se encontraron en el archivo functions_external.php, en las líneas 19, 88 y 115.</p>
+<p><img alt="grep" src="../img/Analisis/grep.png" /></p>
+<p>La función devuelve un dato en <em>$data</em> y lo devuelve exactamente igual, sin validar ni filtrar ni limpiar ni proteger. No hace ningún tipo de comprobación de seguridad. En una aplicación seguria, antes de usar lo que el usuario escribe, se haría algo como eliminar comillas, escapar caracteres especiales, validar la longitud o usar consultas preparadas.</p>
+<ul>
+<li>Dejo enlace para descargar el archivo completo <a href="php/function_external.php" download> Descargar function_external.php </a></li>
+</ul>
+<p><img alt="nocheck" src="../img/Analisis/nocheck.png" /></p>
+<p>En caso de que se utilizase seguridad media, La función xss_check_1() aplica un filtrado insuficiente, ya que únicamente convierte los caracteres mayor que (&lt;) y menor que (&lt;) a entidades HTML. Además, posteriormente aplica urldecode(), lo que permite que un atacante utilice codificación URL para evadir el filtrado. Como consecuencia, es posible introducir código malicioso que será decodificado y ejecutado por el navegador, manteniendo la vulnerabilidad XSS. </p>
+<p><img alt="media" src="../img/Analisis/media.png" /></p>
+<p>En caso de utilizar seguridad alta, La función xss_check_3() implementa una mitigación adecuada frente a ataques XSS mediante el uso de htmlspecialchars() con la opción ENT_QUOTES y codificación UTF-8. De esta forma, todos los caracteres especiales potencialmente peligrosos (&lt;, &gt;, ", ', &amp;) se convierten en entidades HTML, impidiendo que el navegador los interprete como código ejecutable. A diferencia de las funciones anteriores, esta implementación sí representa una defensa correcta frente a XSS reflejado.</p>
+<p><img alt="alta" src="../img/Analisis/alta.png" /></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
