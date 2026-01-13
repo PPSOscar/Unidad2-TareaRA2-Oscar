@@ -12,7 +12,7 @@ En primer lugar, voy a explicar las diferentes máquinas que hay en el archivo [
 
 Este archivo le tengo en el directorio desde el que voy a trabajar esta actividad y desde el cual voy a desplegar el contenedor (_/home/PPSOscar/Escritorio/PPS/Unidad2/Actividad-MaquinasVulnerables1_).
 
-- En este primer grupo tengo tres máquinas:
+En este primer grupo tengo tres máquinas:
 
 1. DVWA
     1. imagen de dvwa
@@ -36,7 +36,7 @@ Este archivo le tengo en el directorio desde el que voy a trabajar esta activida
 ![docker-compose.yml](img/Analisis/docker_compose1.png)
 
 
-- En el segundo grupo encuentro varios contenedores:
+En el segundo grupo encuentro varios contenedores:
 
 1. Base de datos
 2. Base de datos de administrador accesible a través del puerto 81
@@ -48,7 +48,7 @@ Este archivo le tengo en el directorio desde el que voy a trabajar esta activida
 
 ![docker-compose.yml](img/Analisis/docker_compose2.png)
 
-- En el tercer grupo tenemos los segmetnos de las redes:
+En el tercer grupo tenemos los segmetnos de las redes:
 
 1. Encontramos las dos redes utilizadas.
 2. Tenemos los volúmenes utilizados
