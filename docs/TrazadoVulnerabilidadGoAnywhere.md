@@ -6,7 +6,7 @@ El trazado de la vulnerabilidad de la que se informa en la actividad se correspo
 
 ---
 
-## Trazado
+## 1. Trazado
 
 Se informa de una vulnerabilidad crítica relacionada con la omisión de autenticación en [GoAnywhere MFT de Fortra](https://www.fortra.com/es/products/secure-managed-file-transfer-software). La fecha de publicación se corresponde al 24 de enero de 2024 y la importancia tiene un nivel 5, es decir, **crítica**.
 
@@ -27,7 +27,7 @@ Se aportan enlaces para obtener más información desde el portal de clientes de
 
 ---
 
-## Información sobre las vulnerabilidades
+## 2. Información sobre las vulnerabilidades
 
 En este punto, sé a qué elementos afecta la vulnerabilidad, pero no tengo enlace para dirigirme a las diferentes listas, por lo que me iré al enlace del apartado de "referencias" del artículo: [enlace referencia](https://www.fortra.com/security/advisories/product-security/fi-2024-001).
 
@@ -43,7 +43,7 @@ En este punto, tengo la vulnerabilidad **CVE-2024-0204**.
 
 ---
 
-# Información sobre el riesgo o criticidad de una vulnerabilidad
+## 3. Información sobre el riesgo o criticidad de una vulnerabilidad
 
 Ahora lo que haré será buscar la vulnerabilidad en el [MITTRE](https://www.cve.org/CVERecord?id=CVE-2024-0204) y en la base de datos del gobierno de Estados Unidos, la [NVD](https://nvd.nist.gov/vuln/detail/cve-2024-0204).
 
@@ -80,7 +80,7 @@ La debilidad coincide con la de la NVD.
 
 ---
 
-# Información sobre patrones de ataque 
+## 4. Información sobre patrones de ataque 
 
 Sigo realizando la trazabilidad desde el enlace de la debilidad [CWE](https://cwe.mitre.org/data/definitions/425.html).
 
@@ -137,7 +137,7 @@ En el siguiente vídeo muestro el CAPEC-127. Todos los CAPEC tienen prácticamen
 
 ---
 
-# Consulta CPE
+## 5. Consulta CPE
 
 Llegado a este punto, he relacionado tres listas, la de vulnerabilidades (CVE - MITTRE / NVD), la de vulnerabilidades (CWE) y la de patrones de ataque (CAPEC).
 
@@ -153,7 +153,7 @@ El CPE sirve para herramientas automatizadas. Los diferentes programas de detecc
 
 ---
 
-# Registro CVE
+## 6. Registro CVE
 
 Descarga del Registro CVE De la vulnerabilidad
 
